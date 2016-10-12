@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  species: MyString
+  maintenance: MyString
+  price: 9.99
+  description: MyText
+  image_url: MyString
+  location: MyString
+  needs_sun: false
+  needs_shade: false
+  needs_halfshade: false
+
+two:
+  name: MyString
+  species: MyString
+  maintenance: MyString
+  price: 9.99
+  description: MyText
+  image_url: MyString
+  location: MyString
+  needs_sun: false
+  needs_shade: false
+  needs_halfshade: false
