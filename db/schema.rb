@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012140420) do
+ActiveRecord::Schema.define(version: 20161012143256) do
+
+  create_table "locations", force: :cascade do |t|
+    t.boolean  "living_room"
+    t.boolean  "kitchen"
+    t.boolean  "bathroom"
+    t.boolean  "outdoor"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "species"
+    t.string   "maintenance"
+    t.decimal  "price"
+    t.text     "description"
+    t.string   "image_url"
+    t.string   "location"
+    t.boolean  "needs_sun"
+    t.boolean  "needs_shade"
+    t.boolean  "needs_halfshade"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -27,22 +51,6 @@ ActiveRecord::Schema.define(version: 20161012140420) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
-
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.string   "species"
-    t.string   "maintenance"
-    t.decimal  "price"
-    t.text     "description"
-    t.string   "image_url"
-    t.string   "location"
-    t.boolean  "needs_sun"
-    t.boolean  "needs_shade"
-    t.boolean  "needs_halfshade"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
