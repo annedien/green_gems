@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  living_room: false
+  kitchen: false
+  bathroom: false
+  outdoor: false
+
+two:
+  living_room: false
+  kitchen: false
+  bathroom: false
+  outdoor: false
