@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Your Plants
+      </div>
+      <div class="panel-body">
+
+        <% @products.each do |product| %>
+            <div class="row">
+              <div class="col-md-7">
+                <h4><%= product.name %></h4>
+              </div>
+              <div class="col-md-3 right">
+                <%= link_to "View", product, class: "btn btn-default" %>
+                <%= link_to "Update", edit_product_path(product), class: "btn btn-default" %>
+              </div>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <%= link_to "Add new Plant", new_product_path, class: "btn btn-primary" %>
+  </div>
+</div>
