@@ -5,22 +5,23 @@
 </div>
 
 <div class="container">
+<<<<<<< HEAD
+</div>
+
+=======
 
 </div>
 
 
 
+>>>>>>> master
 <div class="row">
   <div class="col-md-3">
     <ul class="sidebar-list">
     </ul>
   </div>
   <div class="col-md-9">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        Your Plants
-      </div>
-      <div class="panel-body">
+
 
         <% @products.each do |product| %>
             <div class="row">
