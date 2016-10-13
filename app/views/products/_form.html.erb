@@ -1,0 +1,38 @@
+<%= form_for @product do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :species %>
+  <%= f.text_field :species %>
+
+  <%= f.label :maintenance %>
+  <%= f.text_field :maintenance %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <div class="form-group">
+    <%= f.check_box :needs_sun %> Sun
+  </div>
+  <div class="form-group">
+    <%= f.check_box :needs_shade %> Shade
+  </div>
+  <div class="form-group">
+    <%= f.check_box :needs_halfshade %> Halfshade
+  </div>
+
+  <div class="actions">
+    <%= f. submit (@product.new_record? ? "Create" : "Update") %>
+  </div>
+
+
+<% end %>
+
+
