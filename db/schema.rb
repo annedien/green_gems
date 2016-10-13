@@ -13,12 +13,9 @@
 ActiveRecord::Schema.define(version: 20161012143256) do
 
   create_table "locations", force: :cascade do |t|
-    t.boolean  "living_room"
-    t.boolean  "kitchen"
-    t.boolean  "bathroom"
-    t.boolean  "outdoor"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
