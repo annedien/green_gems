@@ -3,7 +3,7 @@ class Product < ApplicationRecord
 
   validates :name, presence: true
   validates :species, presence: true
-  validates :maintenence, presence: true
+  validates :maintenance, presence: true
   validates :price, presence: true
   validates :description, presence: true, length: {maximum: 500}
   validates :location, presence: true
@@ -12,4 +12,3 @@ class Product < ApplicationRecord
   validates :needs_halfshade, presence: true
 
 end
-
