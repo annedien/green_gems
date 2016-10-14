@@ -18,20 +18,24 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to edit_product_path(@product), notice: "Product successfully created"
     else
-      redirect_to @home
+      render 'new'
     end
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
-
+  
   def update
-    if @product.update(product_params)
-      redirect_to edit_product_path(@product), notice: "Product successfully updated"
+    @product = Product.find(params[:id])
+
+    if @product.update_attributes(product_params)
+      redirect_to @product, notice: "Product successfully updated"
     else
-      render :edit
+      render 'edit'
     end
   end
+
 
   private
   def set_product
