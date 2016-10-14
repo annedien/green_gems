@@ -16,7 +16,7 @@
   <%= f.text_field :location %>
 
   <%= f.label :price %>
-  <%= f.text_field :price %>
+  <%= f.number_field :price %>
 
   <div class="form-group">
     <%= f.check_box :needs_sun %> Sun
@@ -28,11 +28,12 @@
     <%= f.check_box :needs_halfshade %> Halfshade
   </div>
 
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
   <div class="actions">
-    <%= f. submit (@product.new_record? ? "Create" : "Update") %>
+    <%= f.submit (@product.new_record? ? "Create" : "Update") %>
   </div>
 
 
 <% end %>
-
-

@@ -15,18 +15,13 @@
     <p>Maintenance: <%= @product.maintenance %></p>
     <p>Image to be posted via cloudinary</p>
 
-    <!-- Amenities -->
-    <h4>Where can your plant live? </h4>
-    <ul class="amenities">
-      <li><%= !@product.needs_sun ? ("<s>Sun</s>").html_safe : "Sun" %></li>
-      <li><%= !@product.needs_shade ? ("<del>Shade</del>").html_safe : "Shade" %></li>
-      <li><%= !@product.needs_halfshade ? ("<del>Halfshade</del>").html_safe : "Halfshade" %></li>
-    </ul>
 
     <h4>Price</h4>
     <p><%= @product.price %></p>
   </div>
 
 </div>
+
+<%= link_to "[Edit]", edit_product_path( @product.id ) %>
 
 <%= link_to "Back", product_path, class: "btn btn-default" %>

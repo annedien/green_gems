@@ -1,45 +1,28 @@
 <div class="jumbotron">
-
-<h1 class="page-title">Green Gems</h1>
-<p>Welcome to Green Gems!</p>
+  <h1 class="page-title">Green Gems</h1>
+  <p class="paragraph-intro">Welcome to Green Gems Shop</p>
 </div>
+
+<h3 class="featured">Special products of the month</h3>
+
+<% @products.each do |product| %>
+  <p><%= product.name %></p>
+<% end %>
 
 <div class="container">
+  <div>
+    <ul class = "catalog">
+      <% @products.each do |product| %>
+      <li>
+        <%= link_to image_tag(product.image_url, :class => "thumbnail"), product_path(product.id) %>
+        <p><%= link_to product.name, product_path(product.id) %></p>
 
-</div>
+      </li>
+      <% end %>
 
-
-
-<div class="row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
     </ul>
-  </div>
-  <div class="col-md-9">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        Your Plants
-      </div>
-      <div class="panel-body">
-
-        <% @products.each do |product| %>
-            <div class="row">
-              <div class="col-md-7">
-                <h4><%= link_to product.name, product_path(product.id) %></h4>
-                <div class="panel panel-default">
-                <%= image_tag product.image_url %>
-              </div>
-              </div>
-              <div class="col-md-3 right">
-                <%= link_to "View", product, class: "btn btn-default" %>
-                <%= link_to "Update", edit_product_path(product), class: "btn btn-default" %>
-              </div>
-            </div>
-        <% end %>
-
-      </div>
-    </div>
 
     <%= link_to "Add new Plant", new_product_path, class: "btn btn-primary" %>
+
   </div>
 </div>

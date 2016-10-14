@@ -1,22 +1,22 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
-
+  before_action :authenticate_user!, except: [:show, :index]
 
   def index
     @products = Product.all
   end
 
   def show
+    @product = Product.find(params[:id])
 
   end
 
   def new
-    @product = current_user.product.build
+    @product = Product.new
   end
 
   def create
-    @room = current_user.product.build(prodcut params)
+    @product = Product.new(product_params)
 
     if @product.save
       redirect_to @product, notice: "Product successfully created"
